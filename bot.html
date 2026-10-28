@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .filled {
+        color: #cfe2ff;
+    }
+    .filled2 {
+        color: red;
+    }
+</style>
+
+<body>
+    <input type="text" id="user-msg">
+    <button id="send">Send</button>
+    <br></br>
+    <div >
+
+    <div id="chat"></div>
+
+    <script>
+        
+        document.getElementById("send").addEventListener("click", function(){
+            let input = document.getElementById("user-msg").value;
+
+            let userMsg = document.createElement("p");
+            userMsg.innerText = "You :" + input;
+            document.getElementById("chat").appendChild(userMsg);
+            userMsg.classList.add("filled");
+
+            let botMsg = document.createElement("p");
+            botMsg.innerText = "Bot : HOW CAN I HELP YOU ?";
+            document.getElementById("chat").appendChild(botMsg);
+            botMsg.classList.add("filled2");
+        })
+    </script>
+
+</body>
+</html>
